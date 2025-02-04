@@ -8,10 +8,10 @@ import {
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Box, Typography } from "@mui/material";
-import useFlightCall from "./../hooks/useFlightCall";
+import useFlightCall from "../hooks/useFlightCall";
 import { useSelector } from "react-redux";
 import { InsertEmoticon } from "@mui/icons-material";
-import BasicCard from "../components/BasicCard";
+import BasicCard from "../components/NearbyAirportsCard";
 
 const SimpleMap = () => {
   const [location, setLocation] = useState({ lat: null, lon: null });

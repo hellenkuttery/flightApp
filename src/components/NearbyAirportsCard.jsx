@@ -35,7 +35,7 @@ export default function BasicCard() {
         <Box sx={gradientBorderCardStyle}>
           <Card sx={{ minWidth: 275 }} style={gradientCardStyle}>
             <CardContent>
-              <Typography>Nearby Airports</Typography>
+              <Typography variant="h1">Nearby Airports</Typography>
               <Typography gutterBottom sx={{ color: "white", fontSize: 14 }}>
                 {nearbyAirports.map((item) => (
                   <Typography
@@ -60,9 +60,8 @@ export default function BasicCard() {
                 gutterBottom
                 sx={{ color: "text.secondary", fontSize: 14 }}
               >
-                {nearbyAirports.map((item) => (
-                  <Typography>Select a location from map</Typography>
-                ))}
+                             <Typography>Select a location from map</Typography>
+
               </Typography>
             </CardContent>
             <CardActions>

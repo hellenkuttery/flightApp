@@ -1,18 +1,17 @@
-import React from 'react'
-import SearchAirports from './SearchAirports';
-import DraverMap from './DraverMap';
-
+import React from "react";
+import SearchAirports from "./SearchNearbyAirports";
+import DraverMap from "./DraverMap";
+import { Box } from "@mui/material";
 
 const Home = () => {
-  
   return (
-    <div>
-        Home
-<SearchAirports/>
+    <Box sx={{ padding: "2rem" }}>
+      <Box sx={{display:"flex"}}>
+        <SearchAirports />
+      </Box>
+      {/* <DraverMap/> */}
+    </Box>
+  );
+};
 
-{/* <DraverMap/> */}
-    </div>
-  )
-}
-
-export default Home
+export default Home;
