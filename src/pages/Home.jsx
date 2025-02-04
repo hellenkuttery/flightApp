@@ -1,13 +1,16 @@
 import React from "react";
-import SearchAirports from "./SearchNearbyAirports";
+import SearchNearbyAirports from "./SearchNearbyAirports";
 import DraverMap from "./DraverMap";
 import { Box } from "@mui/material";
+import SearchAirports from './SearchAirports';
 
 const Home = () => {
   return (
     <Box sx={{ padding: "2rem" }}>
-      <Box sx={{display:"flex"}}>
-        <SearchAirports />
+      <Box sx={{display:"flex", flexWrap:"wrap"}}>
+        <SearchNearbyAirports />
+        <SearchAirports/>
+
       </Box>
       {/* <DraverMap/> */}
     </Box>

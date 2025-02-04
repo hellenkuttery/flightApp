@@ -8,7 +8,6 @@ const useFlightCall = () => {
 const dispatch=useDispatch()
 
   const getFlights = async (info) => {
-  console.log(info)
     dispatch(fetchStart())
 
     const url =
@@ -22,7 +21,6 @@ const dispatch=useDispatch()
             "f6659210a2msh615efac14764667p163f4fjsn7df0c4e3c155",
         },
       });
-      console.log("API Response:", data);
       dispatch(fetchSuccess(data))
     } catch (error) {
       console.error("API Error:", error);
@@ -30,21 +28,29 @@ const dispatch=useDispatch()
     }
   };
 
-  const getAirports = async (info) => {
-    console.log(info)
+  const getAirports = async ({origin,destination,date}) => {
+    console.log("info getAirport içinde",origin)
       dispatch(fetchStart())
   
       const url =
-        `https://sky-scrapper.p.rapidapi.com/api/v1/flights/searchAirport?lat=${info.lat}&lng=${info.lon}&locale=en-US`;
+        `https://sky-scrapper.p.rapidapi.com/api/v1/flights/searchAirport&locale=en-US`;
   
       try {
-        const { data } = await axios(`${url}`, {
+
+        await fetch("https://sky-scrapper.p.rapidapi.com/api/v1/flights/searchAirport", {
+          method: "POST",
           headers: {
             "x-rapidapi-host": "sky-scrapper.p.rapidapi.com",
             "x-rapidapi-key":
               "f6659210a2msh615efac14764667p163f4fjsn7df0c4e3c155",
           },
+         
         });
+
+
+
+
+   
         console.log("API Response:", data);
         dispatch(fetchSuccess(data))
       } catch (error) {
@@ -53,7 +59,7 @@ const dispatch=useDispatch()
       }
     };
 
-  return { getFlights };
+  return { getFlights ,getAirports};
 };
 
 export default useFlightCall;

@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 import { InsertEmoticon } from "@mui/icons-material";
 import BasicCard from "../components/NearbyAirportsCard";
 
-const SimpleMap = () => {
+const SearchNearbyAirports = () => {
   const [location, setLocation] = useState({ lat: null, lon: null });
   const [information, setInformation] = useState();
   const [mapInitialized, setMapInitialized] = useState(false);
@@ -55,7 +55,8 @@ const SimpleMap = () => {
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
-        boxShadow:"0px 0px 3px #afa9a9"
+        boxShadow:"0px 0px 3px #afa9a9",
+       margin:"1rem"
         // height: "800px",
       }}
     >
@@ -93,4 +94,4 @@ const SimpleMap = () => {
   );
 };
 
-export default SimpleMap;
+export default SearchNearbyAirports;
