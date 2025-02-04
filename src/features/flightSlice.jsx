@@ -18,8 +18,8 @@ const flightSlice = createSlice({
       state.error = true;
     },
     fetchSuccess: (state, { payload }) => {
-        console.log("payload",payload)
-      state.nearbyAirports = payload;
+        console.log("payload",payload.data.nearby)
+      state.nearbyAirports = payload?.data?.nearby;
     },
   },
 });

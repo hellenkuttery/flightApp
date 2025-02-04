@@ -15,16 +15,14 @@ import BasicCard from "../components/BasicCard";
 
 const SimpleMap = () => {
   const [location, setLocation] = useState({ lat: null, lon: null });
-  const [information,setInformation]=useState()
+  const [information, setInformation] = useState();
   const [mapInitialized, setMapInitialized] = useState(false);
   const { getFlights } = useFlightCall();
-  const {nearbyAirports,loading,error}=useSelector((state)=>state.flight)
+  const { nearbyAirports, loading, error } = useSelector(
+    (state) => state.flight
+  );
 
-
-
-
-
-  console.log(nearbyAirports.data)
+  console.log(nearbyAirports.data);
   useEffect(() => {
     setMapInitialized(true);
   }, []);
@@ -42,7 +40,7 @@ const SimpleMap = () => {
   }
   useEffect(() => {
     if (location.lat && location.lon) {
-      getFlights(location); 
+      getFlights(location);
     }
   }, [location]);
 
@@ -55,9 +53,9 @@ const SimpleMap = () => {
         borderRadius: "2rem",
         display: "flex",
         justifyContent: "center",
-        flexDirection:"column",
+        flexDirection: "column",
         alignItems: "center",
-        height:"800px"
+        // height: "800px",
       }}
     >
       <Box
@@ -72,7 +70,7 @@ const SimpleMap = () => {
           <MapContainer
             center={[51.505, -0.09]}
             zoom={13}
-            style={{ height: "60%", width: "100%", borderRadius: "" }}
+            style={{ height: "100%", width: "100%", borderRadius: "" }}
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <MapClick />
@@ -86,14 +84,10 @@ const SimpleMap = () => {
               </Marker>
             )}
           </MapContainer>
-           
         )}
-     
-        
       </Box>
-          {/* Nearby Airports Verisini Göster */}
-          <Typography>Merhaba</Typography>
-      <BasicCard /> 
+
+      <BasicCard />
     </Box>
   );
 };
