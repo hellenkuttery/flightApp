@@ -5,6 +5,14 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { Box } from "@mui/material";
+
+import {
+  gradientBorderCardStyle,
+  gradientBorderStyle,
+  gradientBorderWrapperStyle,
+  gradientCardStyle,borderAnimaiton
+} from "../styles/globalStyles";
 
 export default function BasicCard() {
   const { nearbyAirports, loading, error } = useSelector(
@@ -22,26 +30,47 @@ export default function BasicCard() {
   console.log(nearbyAirports, "Card içindeyim");
 
   return (
-    <div>
+    <Box sx={{ margintTop: "1rem" }}>
       {nearbyAirports?.length > 0 ? (
-        <Card sx={{ minWidth: 275 }}>
-          <CardContent>
-            <Typography
-              gutterBottom
-              sx={{ color: "text.secondary", fontSize: 14 }}
-            >
-              {nearbyAirports.map((item) => (
-                <Typography>{item.presentation.title}</Typography>
-              ))}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
+        <Box sx={gradientBorderCardStyle}>
+          <Card sx={{ minWidth: 275 }} style={gradientCardStyle}>
+            <CardContent>
+              <Typography>Nearby Airports</Typography>
+              <Typography gutterBottom sx={{ color: "white", fontSize: 14 }}>
+                {nearbyAirports.map((item) => (
+                  <Typography
+                    gutterBottom
+                    sx={borderAnimaiton}
+                  >
+                    {item.presentation.title}{" "}
+                  </Typography>
+                ))}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </Box>
       ) : (
-        <p>Boş</p>
+        <Box sx={gradientBorderCardStyle}>
+          <Card sx={{ minWidth: 275 }} style={gradientCardStyle}>
+            <CardContent>
+              <Typography
+                gutterBottom
+                sx={{ color: "text.secondary", fontSize: 14 }}
+              >
+                {nearbyAirports.map((item) => (
+                  <Typography>Select a location from map</Typography>
+                ))}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 }

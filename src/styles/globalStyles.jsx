@@ -70,36 +70,61 @@ export const gradientBorderWrapperStyle = {
   };
 
 
+  export const gradientBorderCardStyle = {
+    display: 'inline-block',
+    position: 'relative',
+    background: 'transparent',
+    padding: '5px', 
+    borderRadius: '1rem', 
+    backgroundImage: 'linear-gradient(45deg, #282828, #ff585e)', 
 
-
-
-
-
-  
-  
-
-  export const threeDButtonStyle = {
-    background: "linear-gradient(145deg, #ff6b6b, #ff585e)", // Hafif degrade efekt
-    borderRadius: "25px", // Daha küçük oval yapı
-    padding: "6px 14px", // Yanlardan daha az boşluk
-    fontSize: "0.9rem", // Daha küçük ve zarif yazı boyutu
-    fontWeight: "500", // Aşırı kalın değil, daha ince bir görünüm
-    color: "#fff",
-    border: "none",
-    
-    boxShadow: "1px 1px 3px #282828, -1px -1px 3px #ff8585", // Daha hafif 3D gölgeler
-    transition: "all 0.2s ease-in-out",
-    "&:hover": {
-      background: "linear-gradient(145deg, #ff7b7b, #3d3838)", // Hover efekti için daha yumuşak geçiş
-      boxShadow: "1px 1px 5px #282828, -1px -1px 5px #ff8585",
-      transform: "translateY(1px)", // Daha ince basılma efekti
-    },
-    "&:active": {
-      boxShadow: "inset 1px 1px 3px #282828, inset -1px -1px 3px #ff8585",
-      transform: "translateY(2px)", // Butona basılınca içe göçme efekti
-    },
-   
-
-
+    marginTop:"1rem"
   };
+  
+
+  export const gradientCardStyle = {
+    // display: 'inline-block',
+    padding: '20px', // Sayının içindeki alan
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    color: '#fff',
+    backgroundColor: '#282828', // Sayının arka planı
+    borderRadius: '1rem', // Sayıyı yuvarlak yapmak için
+    width: '100%', // Ebeveyn öğesinin genişliği ile uyumlu
+    height: '100%', // Ebeveyn öğesinin yüksekliği ile uyumlu
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center', // Sayıyı merkezle
+  };
+
+
+export const borderAnimaiton={
+  color: "white",
+  padding:"1rem",
+  fontSize: "1.2rem",
+  position: "relative",
+  display: "inline-block",
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    left: 0,
+    bottom: "-2px",
+    width: "100%",
+    height: "2px",
+    background:
+      "linear-gradient(90deg, #8b0303, #464642, #ff7b00, #2e2c2c)", // Renk geçişleri
+    backgroundSize: "200% 100%", // Animasyon için genişletiyoruz
+    animation: "moveGradient 2s linear infinite",
+  },
+  "@keyframes moveGradient": {
+    "0%": { backgroundPosition: "0% 50%" },
+    "100%": { backgroundPosition: "200% 50%" },
+  },
+}
+
+  
+  
+
+  
+
   

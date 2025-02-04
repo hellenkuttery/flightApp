@@ -47,7 +47,7 @@ const SimpleMap = () => {
   return (
     <Box
       style={{
-        backgroundColor: "#464444",
+        backgroundColor: "#292828",
         padding: "1rem",
         width: "100%",
         borderRadius: "2rem",
@@ -55,6 +55,7 @@ const SimpleMap = () => {
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
+        boxShadow:"0px 0px 3px #afa9a9"
         // height: "800px",
       }}
     >

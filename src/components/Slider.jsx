@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material";
 import React from "react";
 import flight from "../assets/flight.jpeg";
-import { btnStyle, gradientBorderStyle, gradientBorderWrapperStyle, sliderStyle, threeDButtonStyle } from "../styles/GlobalStyles";
+import { btnStyle, gradientBorderStyle, gradientBorderWrapperStyle, sliderStyle } from "../styles/GlobalStyles";
 import { Typography } from "@mui/material";
 const Slider = () => {
   return (
@@ -23,7 +23,7 @@ const Slider = () => {
             dolores cumque ad non eaque. Veritatis autem aliquam laudantium
             iusto ipsum!
           </Typography>
-          <Button variant="contained" sx={threeDButtonStyle}>
+          <Button variant="contained" sx={btnStyle}>
             Reservation
           </Button>
           <Button variant="contained" sx={btnStyle}>

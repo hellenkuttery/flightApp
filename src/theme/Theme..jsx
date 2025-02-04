@@ -7,7 +7,7 @@ const theme = createTheme({
       main: '#282828', // Kırmızı ton
     },
     secondary: {
-      main: '#282828', // Mavi ton
+      main: '#DB6E6E', // Mavi ton
     },
     background: {
       default: '#fafafa', // Arka plan rengi
